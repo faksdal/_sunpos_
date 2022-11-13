@@ -11,6 +11,17 @@
 
 using namespace std;
 
+
+
+void printUsage(void);
+
+
+
+void printUsage(void)
+{
+	cout << "Usage: sunpos --date yyyy-mm-dd --time hh:mm:ss --tz n --lat d.ddddd --lon d.ddddd --dst nn(minutes)";
+}
+
 int main(int argc, char *argv[])
 {
 	SolarPhysics *sp;
@@ -33,6 +44,10 @@ int main(int argc, char *argv[])
 					{0, 0, 0, 0}
 	};
 	/*end og getopt variables*/
+	
+	if(argc == 1){
+		printUsage();
+	}
 	
 	// initialize command line variables to some default values, should the user fail to provide...
 	year		= 2000;
