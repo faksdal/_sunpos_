@@ -1,0 +1,9 @@
+Changelog for sunpos project!
+
+11/11-2022
+Cleaned up the algorithms and implemented support for both julian and
+gregorian calendars. 
+Taken into account the missing days from the transition from julian to
+gregorian calendar.
+
+
