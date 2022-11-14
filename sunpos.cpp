@@ -67,7 +67,7 @@ int main(int argc, char *argv[])
 								// end of parsing optarg
 																								
 								// print for debug purposes
-								//printf("year: %d, month: %d, day %d\n", year, month, day);
+								printf("year: %d, month: %d, day %d\n", year, month, day);
 								break;
 							}
 				case 2:		{
