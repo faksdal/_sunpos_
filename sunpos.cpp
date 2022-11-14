@@ -4,6 +4,7 @@
 #include <getopt.h>
 
 #include "julianDay.h"
+#include "printUsage.h"
 #include "parseOptarg.h"
 #include "solarPhysics.h"
 
@@ -12,15 +13,6 @@
 using namespace std;
 
 
-
-void printUsage(void);
-
-
-
-void printUsage(void)
-{
-	cout << "Usage: sunpos --date yyyy-mm-dd --time hh:mm:ss --tz n --lat d.ddddd --lon d.ddddd --dst nn(minutes)";
-}
 
 int main(int argc, char *argv[])
 {
@@ -45,8 +37,10 @@ int main(int argc, char *argv[])
 	};
 	/*end og getopt variables*/
 	
+	// print a message telling how to use the software if the user don't supply arguments
 	if(argc == 1){
 		printUsage();
+		exit(1);
 	}
 	
 	// initialize command line variables to some default values, should the user fail to provide...
@@ -73,7 +67,7 @@ int main(int argc, char *argv[])
 								// end of parsing optarg
 																								
 								// print for debug purposes
-								printf("year: %d, month: %d, day %d\n", year, month, day);
+								//printf("year: %d, month: %d, day %d\n", year, month, day);
 								break;
 							}
 				case 2:		{
@@ -85,33 +79,33 @@ int main(int argc, char *argv[])
 								// end of parsing optarg
 																															
 								// print for debug purposes
-								printf("hour: %d, minute: %d, second %d\n", hour, minute, second);
+								//printf("hour: %d, minute: %d, second %d\n", hour, minute, second);
 								break;
 							}
 				case 3:		{	
 								timezone = atoi(optarg);
 								
 								// print for debug purposes
-								printf("timezone: %d\n", timezone);
+								//printf("timezone: %d\n", timezone);
 								break;
 							}
 				case 4:		{
 								lat = atof(optarg);
 								
 								// print for debug purposes
-								printf("latitude: %f\n", lat);
+								//printf("latitude: %f\n", lat);
 								break;
 				}
 				case 5:		{	
 								lon = atof(optarg);
 								
 								// print for debug purposes
-								printf("longitude: %f\n", lon);
+								//printf("longitude: %f\n", lon);
 								break;
 							}
 				case 6:		{
 								dst = atoi(optarg);
-								printf("dst(min): %d\n", dst);
+								//printf("dst(min): %d\n", dst);
 								break;
 							}
 				default:	{
