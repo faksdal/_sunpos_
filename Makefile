@@ -1,7 +1,7 @@
  
 CC=g++
-CFLAGS=-I. -I./source
-OBJ = obj/sunpos.o obj/julianDay.o obj/solarPhysics.o obj/parseOptarg.o
+CFLAGS=-I. -I./src
+OBJ = obj/sunpos.o obj/julianDay.o obj/solarPhysics.o obj/parseOptarg.o obj/printUsage.o
 
 all: $(OBJ)
 	$(CC) $(OBJ) -o sunpos
@@ -9,15 +9,17 @@ all: $(OBJ)
 obj/sunpos.o: sunpos.cpp
 	$(CC) $(CFLAGS) -c -o obj/sunpos.o sunpos.cpp
 
-obj/julianDay.o : source/julianDay.h source/julianDay.cpp
-	$(CC) $(CFLAGS) -c -o obj/julianDay.o source/julianDay.cpp
+obj/julianDay.o : src/julianDay.h src/julianDay.cpp
+	$(CC) $(CFLAGS) -c -o obj/julianDay.o src/julianDay.cpp
 
-obj/solarPhysics.o : source/solarPhysics.h source/solarPhysics.cpp
-	$(CC) $(CFLAGS) -c -o obj/solarPhysics.o source/solarPhysics.cpp
+obj/solarPhysics.o : src/solarPhysics.h src/solarPhysics.cpp
+	$(CC) $(CFLAGS) -c -o obj/solarPhysics.o src/solarPhysics.cpp
 
-obj/parseOptarg.o : source/parseOptarg.h source/parseOptarg.cpp
-	$(CC) $(CFLAGS) -c -o obj/parseOptarg.o source/parseOptarg.cpp
+obj/parseOptarg.o : src/parseOptarg.h src/parseOptarg.cpp
+	$(CC) $(CFLAGS) -c -o obj/parseOptarg.o src/parseOptarg.cpp
+
+obj/printUsage.o : src/printUsage.h src/printUsage.cpp
+	$(CC) $(CFLAGS) -c -o obj/printUsage.o src/printUsage.cpp
 
 clean:
 	rm -rf obj/*.o
-	rm sunpos
