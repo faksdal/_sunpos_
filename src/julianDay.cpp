@@ -110,9 +110,6 @@ JulianDay::JulianDay(int year, int month, int day, int hour, int minutes, int se
 							- 32045;
 	}
 	
-	// calculate Julian Century
-	jdJulianCentury = (jdJulianDay - 2451545.) / 36525.;
-	
 	// Up until here we've calculated the Julian day starting at noon the specific date.
 	// Now we need to take into account the timezone, the location and local time.
 	
@@ -124,6 +121,12 @@ JulianDay::JulianDay(int year, int month, int day, int hour, int minutes, int se
 	jdJulianDay += ((jdHour + (jdMinutes/60.) + (jdSeconds/3600.) )/24.);
 	
 	printf("JD at noon, after calculating time offset %f\n", jdJulianDay);
+	
+	
+	// calculate Julian Century
+	jdJulianCentury = (jdJulianDay - 2451545.) / 36525.;
+	printf("jdJulianDay - 2451545.: %f\n", jdJulianDay - 2451545.);
+	printf("jc: %f\n", jdJulianCentury*1000000);
 }
 
 

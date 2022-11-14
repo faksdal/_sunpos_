@@ -67,7 +67,7 @@ int main(int argc, char *argv[])
 								// end of parsing optarg
 																								
 								// print for debug purposes
-								printf("year: %d, month: %d, day %d\n", year, month, day);
+								//printf("year: %d, month: %d, day %d\n", year, month, day);
 								break;
 							}
 				case 2:		{
@@ -128,8 +128,8 @@ int main(int argc, char *argv[])
 	cout << "               Julian Day: " << std::fixed << sp->getJulianDay() << "\n";
 	//cout.precision(8);
 	cout << "           Julian Century: " << std::fixed <<  sp->getJulianCentury() << "\n";
-	/*
-	cout << "            lat (degrees): " << sp->getlat() << "\n";
+	
+	cout << "\n            lat (degrees): " << sp->getlat() << "\n";
 	cout << "            lon (degrees): " << sp->getlon() << "\n";
 
 	cout << "                 Timezone: " << sp->gettz() << "\n";
@@ -148,7 +148,7 @@ int main(int argc, char *argv[])
 	cout << "               sunRtAscen: " << sp->getsunRtAscen() <<"\n";
 	cout << "                sunDeclin: " << sp->getsunDeclin() <<"\n";
 	cout << "                     varY: " << sp->getvarY() <<"\n";
-	
+	/*
 	cout << "                 eqOfTime: " << sp->geteqOfTime() <<"\n";
 	cout << "                haSunrise: " << sp->gethaSunrise() <<"\n";
 	cout << " localSolarNoon (decimal): " << sp->getlocalSolarNoon() <<"\n";

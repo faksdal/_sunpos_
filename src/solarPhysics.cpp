@@ -36,6 +36,7 @@ SolarPhysics::SolarPhysics(int _year, int _month, int _day, int _hour, int _minu
 
 
 	this->geomMeanLongSun	= fmod(280.46646 + this->jc * (36000.76983 + this->jc * 0.0003032), 360.);
+	printf("jc: %f\n", this->jc*1000);
 	this->geomMeanAnomSun	= 357.52911 + this->jc*(35999.05029 - 0.0001537 * this->jc);
 	this->eccentEarthOrbit	= 0.016708634 - this->jc * (0.000042037 + 0.0000001267 * this->jc);
 	this->sunEqOfCtr		= sin(RADIANS(this->geomMeanAnomSun)) *
