@@ -83,12 +83,8 @@ JulianDay::JulianDay(int year, int month, int day, int hour, int minutes, int se
 		//printf("\nYear is less than 1582.\n");
 	}
 		
-	if(gregorianDate){
-		//printf("Gregorian date is assumed\n");
-	}
-	else
-		//printf("Julian date is assumed\n");
-
+	
+	
 	// pre-calculations used in both algorithms
 	a	= floor(((14 - jdMonth) / 12));
 	m	= jdMonth - 3 + floor(12 * a);
@@ -118,7 +114,16 @@ JulianDay::JulianDay(int year, int month, int day, int hour, int minutes, int se
 	jdJulianCentury = (jdJulianDay - 2451545.) / 36525.;
 	
 	// Up until here we've calculated the Julian day starting at noon the specific date.
-	// Now we need to take into account the timezone, the location and local time.		
+	// Now we need to take into account the timezone, the location and local time.
+	
+	printf("JD at noon, before calculating time offset %f\n", jdJulianDay);
+	
+	// take off half-a-day so that we start at midnight
+	jdJulianDay -= 0.5;
+	printf("JD at noon, before calculating time offset %f\n", jdJulianDay);
+	jdJulianDay += ((jdHour + (jdMinutes/60.) + (jdSeconds/3600.) )/24.);
+	
+	printf("JD at noon, after calculating time offset %f\n", jdJulianDay);
 }
 
 

@@ -3,6 +3,8 @@
  *
  *	Created on: 15 Jul 2020
  *	Author: jole
+ *	
+ *	JulianDay calculates JD for the given time at Greenwich meridian
  */
 
 #ifndef SRC_JULIANDAY_H_
