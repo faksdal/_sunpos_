@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
 {
 	SolarPhysics *sp;
 	
-	int			year, month, day, hour, minute, second, timezone, dst;
+	int		year, month, day, hour, minute, second, timezone, dst;
 	double		lat, lon;
 	
 	/*getopt variables*/
